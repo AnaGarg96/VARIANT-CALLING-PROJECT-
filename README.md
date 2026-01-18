@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project documents a variant calling pipeline performed on *Escherichia coli* whole‑genome sequencing data using the Galaxy platform. The main purpose of the project was to understand and implement the standard steps involved in variant detection and to organize them into a reproducible workflow.
+This project documents a variant calling pipeline performed on *Escherichia coli* whole‑genome sequencing data using the Galaxy platform. The main purpose of the project was to understand and implement the standard steps involved in variant calling and to organize them into a usable workflow.
 
 ## Objectives
 
@@ -29,21 +29,16 @@ This project documents a variant calling pipeline performed on *Escherichia coli
 
 1. Raw FASTQ files were first checked using FastQC to assess overall read quality.
 2. The reads were then aligned to the *E. coli* reference genome using BWA‑MEM, producing an alignment (BAM) file.
-3. Variants were called from the aligned reads using FreeBayes, generating a VCF file.
+3. Variants were called from the aligned reads using tools, generating a VCF file.
 4. The VCF file was filtered using VCFtools to keep high‑confidence variants (QUAL ≥ 30).
 5. All successful steps were extracted from the Galaxy history and saved as a reusable workflow.
 
 ## Outputs
-
-* FastQC quality reports
+* FastQC quality report
 * BAM alignment file
 * Raw VCF file containing variant calls
 * Filtered VCF file with high‑quality variants
 * Saved Galaxy workflow
-
-## Reproducibility
-
-The entire analysis was saved as a Galaxy workflow, allowing the same steps to be repeated easily on similar datasets.
 
 ## Conclusion
 
